@@ -17,5 +17,6 @@ module.exports = {
         ignoreComments: true,
       },
     ],
+    "import/prefer-default-export": "off",
   },
 };
