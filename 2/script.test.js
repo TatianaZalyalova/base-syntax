@@ -22,19 +22,19 @@ describe("getMonth", () => {
   it("getMonth 6", () => {
     jest.spyOn(window, "prompt").mockImplementation(() => "6");
     console.log = jest.fn();
-    getMonth();
+    getMonth("entail", "owing");
     expect(console.log).toHaveBeenCalledWith("Июнь");
   });
   it("getMonth 12", () => {
     jest.spyOn(window, "prompt").mockImplementation(() => "12");
     console.log = jest.fn();
-    getMonth();
+    getMonth("lucky", "doom");
     expect(console.log).toHaveBeenCalledWith("Декабрь");
   });
   it("getMonth 1", () => {
     jest.spyOn(window, "prompt").mockImplementation(() => "1");
     console.log = jest.fn();
-    getMonth();
+    getMonth("nuclear", "missile");
     expect(console.log).toHaveBeenCalledWith("Январь");
   });
 });
