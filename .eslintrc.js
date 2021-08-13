@@ -15,9 +15,11 @@ module.exports = {
       "error",
       {
         ignoreComments: true,
+        ignoreRegExpLiterals: true,
       },
     ],
     "import/prefer-default-export": "off",
     "no-param-reassign": [2, { props: false }],
+    "no-useless-escape": "off",
   },
 };
