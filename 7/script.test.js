@@ -1,4 +1,4 @@
-test("addEventInput", () => {
+describe("paragraph add functions", () => {
   document.body.innerHTML =
     '<div class="wrap">' +
     "<p>Не следует забывать, что сложившаяся структура организации.</p>" +
@@ -14,13 +14,21 @@ test("addEventInput", () => {
   const button = document.querySelector(".button");
   const form = document.querySelector("form");
   require("./script"); // eslint-disable-line global-require
-  input.value = "some text";
-  input.value = "";
-  expect(button.disabled).toBe(true);
-  input.value = "some text";
-  form.submit();
-  expect(paragraphWrap.querySelectorAll("p").length).toBe(4);
-  form.submit();
-  form.submit();
-  expect(paragraphWrap.querySelectorAll("p").length).toBe(5);
+  test("addEventInput", () => {
+    input.value = "some text";
+    input.value = "";
+    expect(button.disabled).toBe(true);
+  });
+
+  test("addParagraph", () => {
+    input.value = "some text";
+    form.submit();
+    expect(paragraphWrap.querySelectorAll("p").length).toBe(4);
+  });
+
+  test("deleteParagraph", () => {
+    form.submit();
+    form.submit();
+    expect(paragraphWrap.querySelectorAll("p").length).toBe(5);
+  });
 });
